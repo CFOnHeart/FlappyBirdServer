@@ -1,0 +1,98 @@
+g++ -c gateway_server.cpp -o gateway_server.o
+In file included from gateway_server.cpp:1:0:
+gateway_server.h:31:74: error: expected ‘,’ or ‘...’ before ‘.’ token
+     Gateway_server(const char *ip , int port , int maxsize , int listenq . int fdsize . int epollevents)();
+                                                                          ^
+gateway_server.h:31:106: error: ‘Gateway_server’ declared as function returning a function
+     Gateway_server(const char *ip , int port , int maxsize , int listenq . int fdsize . int epollevents)();
+                                                                                                          ^
+gateway_server.h:57:1: error: expected ‘;’ after class definition
+ }
+ ^
+gateway_server.cpp: In function ‘int main(int, char**)’:
+gateway_server.cpp:16:28: error: ‘IPADDRESS’ was not declared in this scope
+     listenfd = socket_bind(IPADDRESS,PORT);
+                            ^
+gateway_server.cpp:16:38: error: ‘PORT’ was not declared in this scope
+     listenfd = socket_bind(IPADDRESS,PORT);
+                                      ^
+gateway_server.cpp:16:42: error: ‘socket_bind’ was not declared in this scope
+     listenfd = socket_bind(IPADDRESS,PORT);
+                                          ^
+gateway_server.cpp:17:21: error: ‘LISTENQ’ was not declared in this scope
+     listen(listenfd,LISTENQ);
+                     ^
+gateway_server.cpp:18:22: error: ‘do_epoll’ was not declared in this scope
+     do_epoll(listenfd);
+                      ^
+gateway_server.cpp: At global scope:
+gateway_server.cpp:26:1: error: prototype for ‘Server::Gateway_server::Gateway_server(const char*, int, int, int, int, int)’ does not match any in class ‘Server::Gateway_server’
+ Server::Gateway_server::Gateway_server(const char *ip , int port , int maxsize , int listenq , int fdsize , int epollevents){
+ ^
+In file included from gateway_server.cpp:1:0:
+gateway_server.h:21:7: error: candidates are: Server::Gateway_server::Gateway_server(const Server::Gateway_server&)
+ class Gateway_server{
+       ^
+gateway_server.cpp:22:1: error:                 Server::Gateway_server::Gateway_server()
+ Server::Gateway_server::Gateway_server(){
+ ^
+gateway_server.cpp: In function ‘void do_epoll(int)’:
+gateway_server.cpp:69:31: error: ‘EPOLLEVENTS’ was not declared in this scope
+     struct epoll_event events[EPOLLEVENTS];
+                               ^
+gateway_server.cpp:71:14: error: ‘MAXSIZE’ was not declared in this scope
+     char buf[MAXSIZE];
+              ^
+gateway_server.cpp:72:12: error: ‘buf’ was not declared in this scope
+     memset(buf,0,MAXSIZE);
+            ^
+gateway_server.cpp:74:28: error: ‘FDSIZE’ was not declared in this scope
+     epollfd = epoll_create(FDSIZE);
+                            ^
+gateway_server.cpp:76:39: error: ‘add_event’ was not declared in this scope
+     add_event(epollfd,listenfd,EPOLLIN);
+                                       ^
+gateway_server.cpp:80:34: error: ‘events’ was not declared in this scope
+         ret = epoll_wait(epollfd,events,EPOLLEVENTS,-1);
+                                  ^
+gateway_server.cpp:81:54: error: ‘handle_events’ was not declared in this scope
+         handle_events(epollfd,events,ret,listenfd,buf);
+                                                      ^
+gateway_server.cpp: In function ‘void handle_events(int, epoll_event*, int, int, char*)’:
+gateway_server.cpp:97:43: error: ‘handle_accpet’ was not declared in this scope
+             handle_accpet(epollfd,listenfd);
+                                           ^
+gateway_server.cpp:99:35: error: ‘do_read’ was not declared in this scope
+             do_read(epollfd,fd,buf);
+                                   ^
+gateway_server.cpp:101:36: error: ‘do_write’ was not declared in this scope
+             do_write(epollfd,fd,buf);
+                                    ^
+gateway_server.cpp: In function ‘void handle_accpet(int, int)’:
+gateway_server.cpp:116:40: error: ‘add_event’ was not declared in this scope
+         add_event(epollfd,clifd,EPOLLIN);
+                                        ^
+gateway_server.cpp: In function ‘void do_read(int, int, char*)’:
+gateway_server.cpp:123:25: error: ‘MAXSIZE’ was not declared in this scope
+     nread = read(fd,buf,MAXSIZE);
+                         ^
+gateway_server.cpp:128:40: error: ‘delete_event’ was not declared in this scope
+         delete_event(epollfd,fd,EPOLLIN);
+                                        ^
+gateway_server.cpp:134:40: error: ‘delete_event’ was not declared in this scope
+         delete_event(epollfd,fd,EPOLLIN);
+                                        ^
+gateway_server.cpp:140:41: error: ‘modify_event’ was not declared in this scope
+         modify_event(epollfd,fd,EPOLLOUT);
+                                         ^
+gateway_server.cpp: In function ‘void do_write(int, int, char*)’:
+gateway_server.cpp:152:41: error: ‘delete_event’ was not declared in this scope
+         delete_event(epollfd,fd,EPOLLOUT);
+                                         ^
+gateway_server.cpp:155:40: error: ‘modify_event’ was not declared in this scope
+         modify_event(epollfd,fd,EPOLLIN);
+                                        ^
+gateway_server.cpp:156:18: error: ‘MAXSIZE’ was not declared in this scope
+     memset(buf,0,MAXSIZE);
+                  ^
+make: *** [gateway_server.o] Error 1

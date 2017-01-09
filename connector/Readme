@@ -1,0 +1,6 @@
+sh start1.sh 编译好可执行的logic_server
+sh start2.sh 编译好可执行的gateway_server
+
+然后可以进入server的目录下执行
+./logic_server
+./gateway_server

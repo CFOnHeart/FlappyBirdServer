@@ -1,0 +1,8 @@
+called: g++
+	/home/ganjun/Desktop/version4.0/connector
+	g++
+	-c
+	gateway_server.cpp
+	-o
+	gateway_server.o
+

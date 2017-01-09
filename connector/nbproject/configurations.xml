@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="config">
+        <in>configure.cpp</in>
+        <in>configure.h</in>
+      </df>
+      <df name="connect_manage">
+        <in>client_connect.cpp</in>
+        <in>client_connect.h</in>
+      </df>
+      <df name="datalayer">
+        <in>sql_operation.cpp</in>
+      </df>
+      <df name="message_solve">
+        <in>account_message_solve.cpp</in>
+        <in>account_message_solve.h</in>
+      </df>
+      <df name="server">
+        <in>logic_server.cpp</in>
+        <in>logic_server.h</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要文件"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir></buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f makefile</buildCommand>
+          <cleanCommand>${MAKE} -f makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="config/configure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="config/configure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="connect_manage/client_connect.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="connect_manage/client_connect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="datalayer/sql_operation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="message_solve/account_message_solve.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="message_solve/account_message_solve.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="server/logic_server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="server/logic_server.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
